@@ -1,13 +1,11 @@
 #!/usr/bin/env node
-import WebSocket from "ws"; // install: npm install ws
-import inquirer from "inquirer"; // install: npm install inquirer
-import ora from "ora"; // install: npm install ora
+import WebSocket from "ws"; 
+import inquirer from "inquirer"; 
+import ora from "ora";
 import chalk from "chalk";
-import chalkTemplate from "chalk-template"; // install: npm install chalk-template@1
-// import {} } from "jose"; // install: npm install jose
-// import { sign } from "jose";
-const BASE_HOST = "proxy.ayooub.me"; // remote server
-// const BASE_HOST = "localhost:8787"; // remote server
+
+// const BASE_HOST = "proxy.ayooub.me"; // remote server
+const BASE_HOST = "localhost:8787"; // remote server
 
 const isProxyAvailable = async (proxy: string) => {
   try {
@@ -190,8 +188,8 @@ async function main() {
 
   const PROXY_NAME = await getProxyName();
 
-  // const WS_URL = `ws://${BASE_HOST}/register/${PROXY_NAME}`; // remote websocket server
-  const WS_URL = `wss://${BASE_HOST}/register/${PROXY_NAME}`; // remote websocket server
+  const WS_URL = `ws://${BASE_HOST}/register/${PROXY_NAME}`; // remote websocket server
+  // const WS_URL = `wss://${BASE_HOST}/register/${PROXY_NAME}`; // remote websocket server
 
   console.debug("connection with ", WS_URL);
 
