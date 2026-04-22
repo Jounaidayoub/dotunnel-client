@@ -7,7 +7,9 @@
     "dotunnel": "dist/index.js"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "DOTUNNEL_BASE_URL=localhost:8787 node  src/index.ts",
+    "start": "node dist/index.js"
   },
   "files": [
     "dist"
