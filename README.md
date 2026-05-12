@@ -47,7 +47,23 @@ $ npx dotunnel
 🔗 Public URL:    https://todo-api-prxy.jounaid.dev
 ```
 
-Currently, all options are configured via an interactive prompt. Flags (e.g. `-p`, `--port`) will be supported Soon !!.
+### CLI Flags
+
+All options can be provided as CLI flags, skipping the interactive prompt:
+
+| Flag                  | Description                             |
+|-----------------------|-----------------------------------------|
+| `-p, --port <number>` | Local port to expose                    |
+| `-n, --name <proxy>`  | Proxy name (subdomain)                  |
+| `-b, --base-url <host>` | Base host for the tunnel server       |
+| `-d, --debug`         | Enable debug logging                    |
+| `-h, --help`          | Display help for command                |
+
+```bash
+npx dotunnel --port 3000 --name my-app
+```
+
+https://my-app-prxy.jounaid.dev pointing to http://localhost:3000
 
 ### Install globally
 
