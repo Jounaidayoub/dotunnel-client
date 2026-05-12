@@ -28,7 +28,7 @@ By default, this will:
 
 1. Prompt you for your local port (e.g.: 3000)
 2. Ask for a name for your proxy (e.g.: `my-app`)
-3. Output a public URL (e.g. `https://my-app-prxy.ayooub.me`)
+3. Output a public URL (e.g. `https://my-app-prxy.jounaid.dev`)
 4. ✅ Forward requests from the public URL to your local server
 
 ### Example Usage
@@ -44,7 +44,7 @@ $ npx dotunnel
 
 
 🌐 Forwarding to: http://localhost:3000
-🔗 Public URL:    https://todo-api-prxy.ayooub.me
+🔗 Public URL:    https://todo-api-prxy.jounaid.dev
 ```
 
 Currently, all options are configured via an interactive prompt. Flags (e.g. `-p`, `--port`) will be supported Soon !!.

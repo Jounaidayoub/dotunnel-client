@@ -34,7 +34,7 @@ export function showIntro(logger: Logger) {
   logger.info("");
   logger.info(chalk.cyan("dotunnel client"));
   logger.info("");
-  logger.info(chalk.gray("Example: http://localhost:8000 -> https://todo-prxy.ayooub.me"));
+  logger.info(chalk.gray("Example: http://localhost:8000 -> https://todo-prxy.jounaid.dev"));
   logger.info("");
 }
 
