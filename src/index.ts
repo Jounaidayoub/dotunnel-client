@@ -4,6 +4,7 @@ import { promptForPort, promptForProxyName } from "./prompts.ts";
 import { createLogger, showIntro } from "./output.ts";
 import { startTunnel } from "./tunnel.ts";
 import {
+  isPortOpen,
   validatePortNumber,
   validateProxyName,
   validateProxyNameAvailability,
@@ -16,11 +17,17 @@ async function resolveInputs() {
   const debug = cli.debug || process.env.DEBUG === "true";
   const logger = createLogger({ debug });
 
+  showIntro(logger);
   let port = cli.port;
   if (port !== undefined) {
     const portValidation = validatePortNumber(port);
     if (!portValidation.ok) {
       logger.error(portValidation.error);
+      process.exit(1);
+    }
+    const open = await isPortOpen(portValidation.value);
+    if (!open) {
+      logger.error("Port is not open.");
       process.exit(1);
     }
     port = portValidation.value;
@@ -53,7 +60,6 @@ async function resolveInputs() {
 
 async function main() {
   const { port, proxyName, baseHost, debug, logger } = await resolveInputs();
-  showIntro(logger);
   const config = createTunnelConfig({
     port,
     proxyName,
