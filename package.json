@@ -7,9 +7,10 @@
     "dotunnel": "dist/index.js"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "DOTUNNEL_BASE_URL=localhost:8787 node  src/index.ts",
-    "start": "node dist/index.js"
+    "build": "vite build",
+    "dev": "DOTUNNEL_BASE_URL=localhost:8787 vite build --watch",
+    "start": "node dist/index.js",
+    "test": "vitest run"
   },
   "files": [
     "dist"
@@ -21,13 +22,23 @@
   "type": "module",
   "dependencies": {
     "chalk": "^4.1.2",
+    "commander": "^12.1.0",
     "inquirer": "^12.9.4",
     "ora": "^8.2.0",
     "ws": "^8.18.3"
   },
   "devDependencies": {
-    "@types/ws": "^8.18.1",
     "@types/inquirer": "^9.0.9",
-    "typescript": "^5.9.2"
+    "@types/node": "^22.18.0",
+    "@types/ws": "^8.18.1",
+    "rollup-plugin-node-externals": "^9.0.1",
+    "typescript": "^5.9.2",
+    "vite": "^8.0.12",
+    "vitest": "^2.1.9"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
